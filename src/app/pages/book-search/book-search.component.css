@@ -1,0 +1,35 @@
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #f28c38;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e07c28;
+}
+
+.loading {
+  margin: 10px 0;
+  color: #555;
+}
+
+.error {
+  margin: 10px 0;
+  color: red;
+}

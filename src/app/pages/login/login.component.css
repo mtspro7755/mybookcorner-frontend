@@ -1,0 +1,61 @@
+.login-container {
+  max-width: 360px;
+  margin: 80px auto;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #f28c38;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button.google {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+}
+
+button.apple {
+  background: #000;
+  color: white;
+}
+
+.forgot {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #777;
+}
+
+.divider {
+  margin: 12px 0;
+  color: #aaa;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}

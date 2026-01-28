@@ -1,0 +1,12 @@
+@if (authService.isLoggedIn()) {
+  <div class="app-layout">
+    <app-sidebar></app-sidebar>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+} @else {
+  <div class="login-fullscreen">
+    <router-outlet></router-outlet>
+  </div>
+}

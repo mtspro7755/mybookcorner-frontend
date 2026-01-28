@@ -1,0 +1,16 @@
+<div class="book-card">
+  <img
+    class="book-cover"
+    [src]="book.thumbnail || 'assets/no-cover.png'"
+    alt="{{ book.title }}"
+  />
+
+  <div class="book-info">
+    <h3 class="book-title">{{ book.title }}</h3>
+    <p class="book-author">{{ book.authors }}</p>
+
+    <button class="btn-details" (click)="onViewDetails()">
+      View Details
+    </button>
+  </div>
+</div>

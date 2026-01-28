@@ -1,0 +1,19 @@
+.app-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #fdf8f3; /* Couleur beige de ta maquette */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.login-fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fdf8f3;
+}

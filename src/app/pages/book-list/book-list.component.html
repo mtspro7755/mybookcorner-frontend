@@ -1,0 +1,11 @@
+<div class="book-grid">
+  <app-book-card
+    *ngFor="let book of books"
+    [book]="book"
+    (viewDetails)="onViewDetails($event)">
+  </app-book-card>
+</div>
+
+<div *ngIf="books.length === 0" class="empty-state">
+  No books found. Try another search <i class="fa-solid fa-book-bookmark"></i>
+</div>

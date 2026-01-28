@@ -1,0 +1,28 @@
+<aside class="sidebar">
+  <div class="top-content">
+    @if (user) {
+      <div class="user-section">
+        <div class="avatar">
+          {{ user.name.charAt(0) }}
+        </div>
+        <p class="welcome-text">Welcome, {{ user.name }}!</p>
+      </div>
+    }
+
+    <nav class="menu">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+      <a routerLink="/my-books" routerLinkActive="active">
+        <i class="fa-solid fa-book-open"></i> My Books
+      </a>
+      <a routerLink="/favorites" routerLinkActive="active">
+        <i class="fa-solid fa-star"></i> Favorites
+      </a>
+    </nav>
+  </div>
+
+  <button class="logout" (click)="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i> Logout
+  </button>
+</aside>

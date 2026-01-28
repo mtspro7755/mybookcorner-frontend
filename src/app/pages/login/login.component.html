@@ -1,0 +1,28 @@
+<div class="login-container">
+
+  <h2>Welcome Back!</h2>
+
+  <input
+    type="email"
+    placeholder="Email address"
+    [(ngModel)]="email"
+  />
+
+  <input
+    type="password"
+    placeholder="Password"
+    [(ngModel)]="password"
+  />
+
+  <a class="forgot">Forgot Password?</a>
+
+  <button (click)="onLogin()">Login</button>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="divider">or</div>
+
+  <button class="google">Continue with Google</button>
+  <button class="apple">Continue with Apple</button>
+
+</div>
