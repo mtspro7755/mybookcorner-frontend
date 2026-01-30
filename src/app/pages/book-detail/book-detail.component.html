@@ -1,25 +1,70 @@
-<div class="book-detail" *ngIf="book">
+<div class="detail-container" *ngIf="book">
 
-  <div class="book-header">
-    <img [src]="book.thumbnail" alt="{{ book.title }}">
-    <div>
-      <h2>{{ book.title }}</h2>
-      <p>{{ book.authors }}</p>
-    </div>
+  <div class="detail-grid">
+
+    <!-- BOOK INFO -->
+    <section class="book-section">
+      <div class="book-header">
+        <img [src]="book.thumbnail" [alt]="book.title">
+
+        <div class="book-meta">
+          <span class="category-badge">Premium Library</span>
+          <h2>{{ book.title }}</h2>
+          <p class="author">by {{ book.authors }}</p>
+
+          <div class="rating">
+            <i class="fa-solid fa-star" *ngFor="let s of [1,2,3,4]"></i>
+            <i class="fa-regular fa-star"></i>
+            <span>4.8</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="description">
+        <!--{{ book.description || 'No description available for this book.' }}-->
+      </p>
+    </section>
+
+    <!-- COMMENTS -->
+    <section class="comments-section">
+      <div class="comments-header">
+        <h3>
+          <i class="fa-solid fa-comments"></i>
+          Reviews ({{ comments.length }})
+        </h3>
+      </div>
+
+      <div class="comments-list">
+        <div *ngFor="let c of comments" class="comment-item">
+          <div class="comment-avatar">
+            {{ user?.name?.charAt(0) || 'U' }}
+          </div>
+
+          <div class="comment-content">
+            <strong>{{ user?.name || 'Reader' }}</strong>
+            <p>{{ c.content }}</p>
+          </div>
+        </div>
+
+        <div *ngIf="comments.length === 0" class="empty-msg">
+          No reviews yet.
+        </div>
+      </div>
+
+      <div class="add-comment">
+        <textarea
+          [(ngModel)]="newComment"
+          placeholder="Share your thoughts...">
+        </textarea>
+
+        <button
+          class="btn-submit"
+          (click)="addComment()"
+          [disabled]="!newComment.trim()">
+          <i class="fa-solid fa-paper-plane"></i> Post
+        </button>
+      </div>
+    </section>
+
   </div>
-
-  <section class="comments">
-    <h3>Comments</h3>
-
-    <div *ngFor="let c of comments" class="comment">
-      {{ c.content }}
-    </div>
-
-    <textarea
-      [(ngModel)]="newComment"
-      placeholder="Add a comment...">
-    </textarea>
-
-    <button (click)="addComment()">Add Comment</button>
-  </section>
 </div>
